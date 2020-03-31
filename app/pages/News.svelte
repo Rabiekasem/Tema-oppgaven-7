@@ -7,6 +7,7 @@
   import Games from "./Games.svelte"
   import App from "../App.svelte"
   import SubPage from "../modals/SubPage.svelte"
+  import articleSearchPage from "../modals/ArticleSearchPage"
   
   const apiKey = "e14f4ede420e450baafed861c6893a83"
   const NewsApi = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`
@@ -40,6 +41,15 @@
             }
         })
     }
+
+    const articleSearch = async() =>{
+        await showModal({
+            page: ArticleSearchPage,
+            props:{
+                articles:articles
+            }
+        })
+    }
   
   onMount (() => {
     console.log("HELLO HELLO")
@@ -58,6 +68,10 @@
   <page class="page">
       <actionBar title="News">
         <navigationButton text="Go back" android.systemIcon="ic_menu_back" on:tap="{goBack}" />
+        <actionItem on:tap={ () => articleSearch() }
+            android.systemIcon="ic_menu_search" android.position="right"
+            ios.systemIcon="10" ios.position="right"
+        />
       </actionBar>
   
       <stackLayout>
@@ -82,7 +96,7 @@
                         </flexboxLayout>
                         <label class="line"/>
                     {:else}    
-                      <label text = "no fetching" class="h1" />
+                      <activityIndicator busy="{true}" />
                     {/each}
                   </stackLayout> 
               </scrollView>
