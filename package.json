@@ -20,6 +20,8 @@
   "repository": "https://github.com/halfnelson/svelte-native-template",
   "dependencies": {
     "@fabiohvp/svelte-table": "^1.6.3",
+    "@nativescript/theme": "^2.3.3",
+    "@nstudio/nativescript-cardview": "^1.0.0",
     "firebase": "^7.13.1",
     "firestore-parser": "^0.9.0",
     "nativescript-theme-core": "~2.0.24",

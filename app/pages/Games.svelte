@@ -57,17 +57,14 @@
 </script>
 
 
-<page class="page">
-    <actionBar title="Games">
- 	    <navigationButton text="Go back" android.systemIcon="ic_menu_back" on:tap="{goBack}" />
-    </actionBar>
-  
+<page class="page" actionBarHidden={true}>
+
     <stackLayout>
         <stackLayout>
             <flexboxLayout class="buttonsMain" alignItems="flex-start" backgroundColor="">
- 	            <button text="Main" width="70" height="70" backgroundColor="#4383b8" on:tap={() => showMain()}/>
- 	            <button text="News" width="70" height="70" backgroundColor="#4383b8"  on:tap={() => showNews()}/>
- 	            <button text="Games" width="70" height="70" backgroundColor="#4383b8"/>
+ 	            <button text="Main" width="70" height="30" backgroundColor="" on:tap={() => showMain()}/>
+ 	            <button text="News" width="70" height="30" backgroundColor="" on:tap={() => showNews()}/>
+ 	            <button text="Games" width="70" height="30" backgroundColor=""/>
             </flexboxLayout>
         </stackLayout>
     
@@ -99,13 +96,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 10;
+        padding: 0;
         background-color: rgb(95, 48, 48);
     }
     
     .buttonsMain > button{
-        border-radius: 20% 0 20% 0;
-        margin: 20 20;
+        margin: 15 15;
+        background-color: rgb(95, 48, 48);
         color: antiquewhite;
     }
     .stackTwo > image {

@@ -7,10 +7,10 @@
   import Games from "./Games.svelte"
   import App from "../App.svelte"
   import SubPage from "../modals/SubPage.svelte"
-  import articleSearchPage from "../modals/ArticleSearchPage"
   
   const apiKey = "e14f4ede420e450baafed861c6893a83"
-  const NewsApi = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`
+  const NewsApi = `https://newsapi.org/v2/everything?q=apple&from=2020-03-30&to=2020-03-30&sortBy=popularity&apiKey=${apiKey}`
+  
   
   
   let articles = []
@@ -65,21 +65,14 @@
 </script>
 
 
-  <page class="page">
-      <actionBar title="News">
-        <navigationButton text="Go back" android.systemIcon="ic_menu_back" on:tap="{goBack}" />
-        <actionItem on:tap={ () => articleSearch() }
-            android.systemIcon="ic_menu_search" android.position="right"
-            ios.systemIcon="10" ios.position="right"
-        />
-      </actionBar>
+  <page class="page" actionBarHidden={true}>
   
       <stackLayout>
           <stackLayout>
               <flexboxLayout class="buttonsMain" alignItems="flex-start" backgroundColor="">
-      	        <button text="Main" width="70" height="70" backgroundColor="#4383b8" on:tap={() => showMain()}/>
-      	        <button text="News" width="70" height="70" backgroundColor="#4383b8"/>
-      	        <button text="Games" width="70" height="70" backgroundColor="#4383b8" on:tap={() => showGames()}/>
+      	        <button text="Main" width="70" height="30" backgroundColor="" on:tap={() => showMain()}/>
+      	        <button text="News" width="70" height="30" backgroundColor=""/>
+      	        <button text="Games" width="70" height="30" backgroundColor="" on:tap={() => showGames()}/>
               </flexboxLayout>
           </stackLayout>
       
@@ -115,13 +108,14 @@
      display: flex;
      align-items: center;
      justify-content: center;
-     padding-top: 10;
+     padding: 0;
      background-color: rgb(95, 48, 48);
   }  
   .buttonsMain > button{
-     border-radius: 20% 0 20% 0;
-     margin: 20 20;
-     color: antiquewhite
+     background-color: rgb(95, 48, 48);
+     margin: 15 15;
+     color: aliceblue;
+     
   }  
   .article{
      background-color: rgb(206, 206, 206);

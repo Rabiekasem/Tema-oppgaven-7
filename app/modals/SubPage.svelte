@@ -14,7 +14,7 @@
           src = "{article.urlToImage}"
           stretch = "aspectFit"
         />
-        <button on:tap = { () =>closeModal()} text="close"/>            
+        <button on:tap = { () => closeModal()} text="close"/>            
         
       </stackLayout>
 </scrollView>
