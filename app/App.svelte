@@ -1,64 +1,62 @@
-
 <script>
-    import {navigate} from "svelte-native"
-    import {showModal} from "svelte-native"
-    import News from "./pages/News.svelte"
-    import Games from "./pages/Games.svelte"
-    import SubPage3 from "./modals/SubPage3.svelte"
-    import SubPage4 from "./modals/SubPage4.svelte"
+  import {navigate} from "svelte-native"
+  import {showModal} from "svelte-native"
+  import News from "./pages/News.svelte"
+  import Games from "./pages/Games.svelte"
+  import SubPage3 from "./modals/SubPage3.svelte"
+  import SubPage4 from "./modals/SubPage4.svelte" 
 
-    const showNews = async() =>{
+    
+  const showNews = async() =>{
         await navigate({
             page: News,
             props:{
-                msg:"hi"
+                msg:""
             }
         })
-    }
+    } 
 
-    const showGames = async() =>{
+   const showGames = async() =>{
         await navigate({
             page: Games,
             props:{
-                msg:"hi"
+                msg:""
             }
         })
-    }
+    } 
 
-    const lebronArticle = async() =>{
+  const lebronArticle = async() =>{
         await showModal({
             page: SubPage3,
             fullscreen: "true",
             props:{
-                msg:"hi"
+                msg:""
             }
         })
-    }
-
-    const goatArticle = async() =>{
+  } 
+  const goatArticle = async() =>{
         await showModal({
             page: SubPage4,
             fullscreen: "true",
             props:{
-                msg:"hi"
+                msg:""
             }
         })
-    }
-
-    
+  }
+ 
 </script>
 
 
 <page class="page" actionBarHidden={true}>
-    <scrollView>
+    <scrollView class="scroll">
         <stackLayout>
     
             <stackLayout>
-              <flexboxLayout class="buttonsMain" alignItems="flex-start" backgroundColor="">
-        	    <button text="Main" width="70" height="30" backgroundColor=""/>
-        	    <button text="News" width="70" height="30" backgroundColor="" on:tap={() => showNews()}/>
-        	    <button text="Games" width="70" height="30" backgroundColor="" on:tap={() => showGames()}/>
-              </flexboxLayout>
+                <flexboxLayout class="buttonsMain" alignItems="flex-start" backgroundColor="">
+        	        <button text="Main" width="70" height="30" backgroundColor=""/>
+        	        <button text="News" width="70" height="30" backgroundColor="" on:tap={() => showNews()}/>
+        	        <button text="Games" width="70" height="30" backgroundColor="" on:tap={() => showGames()}/>
+                </flexboxLayout>
             </stackLayout>
         
             <stackLayout>
@@ -77,12 +75,12 @@
 
             <stackLayout>
                <dockLayout stretchLastChild="true" backgroundColor="#3c495e">
-                       <image class="dockImg" height="300" width="125" src="https://www.nba.com/lakers/sites/lakers/files/ww-04-bronfor3.jpg"
-                       stretch="aspectFill" /> 
-	                   <image class="dockImg" height="300" width="125" src="https://i.pinimg.com/236x/45/76/5e/45765e1cb8d69e40a47f782b85b92198.jpg"
-                       stretch="fill" />
-                       <image class="dockImg" height="300" src="https://fsb.zobj.net/crop.php?r=7Sv8DzGZx-kW-mk6VZTV0O3hWRBHn7K1u57vHk1a-PS92WxydejDyqOx7rIbxWglCVrwfqKpyIL1sfLAew6RgjhCrV6UZ-Z7O_rOX_5LZb03vvWzy75vDW1mTQ8YGVQ6gJM3cYWJsWRfR9J5"
-                       stretch="fill" />
+                    <image class="dockImg" height="300" width="125" src="~/images/lebron1.jpg"
+                    stretch="aspectFill" /> 
+	                <image class="dockImg" height="300" width="125" src="~/images/lebron2.jpg"
+                    stretch="fill" />
+                    <image class="dockImg" height="300" src="~/images/lebron3.jpg"
+                    stretch="fill" />
                </dockLayout>
             </stackLayout>
 
@@ -94,27 +92,25 @@
 
             <stackLayout>
                 <flexboxLayout flexDirection="column" backgroundColor="#3c495e">
-	                <image height="100" width="125" src="https://lh3.googleusercontent.com/proxy/BEEXdULOCAMtwB4LaoVzn7X4x51TgANJ1Lhx2PObrq5c17vY4KQbB6c5CE1NJbebEiyi_BE6aOs_3OFyInJL2mKbkkAYTpscMVMj3kMmEE8wZATqhyAYY5e90xoxMaVJ2a6q6UYx-ccZX1bkShfjpkEf-cepj6Fdzlk_Z_F06A"
+	                <image height="100" width="100%" src="~/images/jordan.jpg"
                     stretch="aspectFill" /> 
-	                <image height="100" width="125" src="https://pbs.twimg.com/media/EPPW00zW4AQCDR-.jpg"
+	                <image height="100" width="100%" src="~/images/braynt.jpg"
                     stretch="fill" />
-                    <image height="100" src="https://lh3.googleusercontent.com/proxy/g0zh0LHGuXKHFaBI3CSrXlg-n43wevfDYngd94ezuVss1fI8_nxGnPQiNE88eiPS1g_FiEe7zdOBm8TeepgWXh6xFoObFNphM01cRVwu0tSGuQtW85w-E1iEtnDV_V_tRTanqKGMWkEBIaDLbV1N7qTNo0vWaH053AwsR_aHsPhOeg"
+                    <image height="100" src="~/images/james.jpg"
                     stretch="fill" />
                 </flexboxLayout>
             </stackLayout>
     
         </stackLayout>
     </scrollView>
-    
-    
 </page>
 
 
 
 <style>
- .page{
-    background-color: white;
- }
+ .scroll{
+    background-color: #e2e2e2;
+ } 
 
  .buttonsMain{
     display: flex;
@@ -130,22 +126,20 @@
  }
 
  .buttonsMain > button{
-
     margin: 15 15;
     background-color: rgb(0, 0, 0);
     color: whitesmoke;
  }
 
  .stack2{
-     animation-name: fadeToLeft;
-     animation-duration: 0.5s;
-     animation-fill-mode: forwards;
-     animation-timing-function: ease-in;
-
-     position: relative;
-     top: 0;
-     left: 0;
-     background-attachment: fixed;
+    animation-name: fadeToLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-attachment: fixed;
  }
 
  .stack3, .stack5{
@@ -156,15 +150,14 @@
 
 
  .logoImg{
-     animation-name: fadeToRight;
-     animation-duration: 0.5s;
-     animation-fill-mode: forwards;
-     animation-timing-function: ease-in;
-
-     position: absolute;
-     width: 110;
-     height: 90;
-     margin-top: -45;
+    animation-name: fadeToRight;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    position: absolute;
+    width: 110;
+    height: 90;
+    margin-top: -45;
  }
 
  .label1{
@@ -172,7 +165,6 @@
     font-size: 40;
     margin-top: 20;
  }
-
 
  @keyframes leftIn{
     from { transform: translateY(-100); }

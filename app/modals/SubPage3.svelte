@@ -3,17 +3,17 @@
 </script>
 
 <page class="page">
-<stackLayout>
+  <stackLayout>
     <stackLayout> 
-       <button text="back" on:tap={() => closeModal()}/>
+      <button class="button" text="back" on:tap={() => closeModal()}/>
     </stackLayout>
     
     <stackLayout>
-        <scrollView>  
-            <webView src="https://www.jumpropedudes.com/workouts/lebron-james-body-breakdown" />
-        </scrollView>
+      <scrollView>  
+        <webView src="https://www.jumpropedudes.com/workouts/lebron-james-body-breakdown" />
+      </scrollView>
     </stackLayout>
-</stackLayout>
+  </stackLayout>
 </page>
 
 
@@ -21,5 +21,10 @@
 
  .page{
    background-color: rgb(180, 180, 179);
+ }
+ .button{
+  width: 100%;
+  background-color: white;
+  margin: 0;
  }
 </style>

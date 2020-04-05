@@ -3,17 +3,17 @@
 </script>
 
 <page class="page">
-<stackLayout>
+  <stackLayout>
     <stackLayout> 
-       <button text="back" on:tap={() => closeModal()}/>
+      <button class="button" text="back" on:tap={() => closeModal()}/>
     </stackLayout>
     
     <stackLayout>
         <scrollView>  
-            <webView src="https://bleacherreport.com/articles/845438-the-ultimate-goat-debate#slide0" />
+          <webView src="https://eu.usatoday.com/story/sports/nba/columnist/jeff-zillgitt/2019/03/07/nba-greatest-of-all-time-goat-lebron-james-wilt-chamberlain-michael-jordan-bill-russell-kareem/3095981002/" />
         </scrollView>
     </stackLayout>
-</stackLayout>
+  </stackLayout>
 </page>
 
 
@@ -21,5 +21,11 @@
 
  .page{
    background-color: rgb(180, 180, 179);
+ }
+ 
+ .button{
+   width: 100%;
+   background-color: white;
+   margin: 0;
  }
 </style>
